@@ -5,7 +5,7 @@ function Message(props) {
 
   return (
     <div className={`p-5 w-full ${backgroundColor} rounded mb-10`}>
-      <h1 className={`${textColor} text-center`}>{text}</h1>
+      <h1 className={`${textColor} text-sm text-center`}>{text}</h1>
     </div>
   );
 }
