@@ -1,16 +1,10 @@
 import { useState } from 'react';
 import Message from './Message';
 
-function Login() {
+function Login(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
-  const resetScreen = () => {
-    setUsername('');
-    setPassword('');
-    setErrorMessage('');
-  };
 
   const login = async (username, password) => {
     const raw = await fetch('https://odingblogapi.herokuapp.com/api/login', {
@@ -26,12 +20,13 @@ function Login() {
 
   const onClickLogin = async () => {
     if (username && password) {
-      const response = await login(username, password);
+      const res = await login(username, password);
 
-      if (response.status === 'failure') {
+      if (res.status === 'failure') {
         setErrorMessage('Sorry, please enter valid login information!');
       } else {
-        resetScreen();
+        const jwt = res.data.token;
+        props.setToken(jwt);
       }
     } else {
       setErrorMessage('Sorry, you must fill out both fields first!');
