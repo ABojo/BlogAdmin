@@ -6,7 +6,7 @@ function Login() {
 
   return (
     <div className="w-full h-screen bg-blue-400">
-      <div className=" inline-block p-10 w-96 login-form shadow-lg rounded bg-white">
+      <div className="inline-block p-10 max-w-sm w-11/12 login-form shadow-lg rounded bg-white ">
         <h1 className="text-center text-blue-500 text-5xl mb-5">
           <i className="fas fa-lock"></i>
         </h1>
