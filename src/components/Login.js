@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Message from './Message';
 import Loader from './Loader';
+import API from '../utils/API';
 
 function Login(props) {
   const [username, setUsername] = useState('');
@@ -8,22 +9,10 @@ function Login(props) {
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const login = async (username, password) => {
-    const raw = await fetch('https://odingblogapi.herokuapp.com/api/login', {
-      method: 'POST',
-      body: JSON.stringify({ username, password }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    });
-    const json = await raw.json();
-    return json;
-  };
-
   const onClickLogin = async () => {
     if (username && password) {
       setIsLoading(true);
-      const res = await login(username, password);
+      const res = await API.login(username, password);
 
       if (res.status === 'failure') {
         setIsLoading(false);
