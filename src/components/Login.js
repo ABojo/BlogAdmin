@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import Message from './Message';
+import Loader from './Loader';
 
 function Login(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const login = async (username, password) => {
     const raw = await fetch('https://odingblogapi.herokuapp.com/api/login', {
@@ -20,9 +22,11 @@ function Login(props) {
 
   const onClickLogin = async () => {
     if (username && password) {
+      setIsLoading(true);
       const res = await login(username, password);
 
       if (res.status === 'failure') {
+        setIsLoading(false);
         setErrorMessage('Sorry, please enter valid login information!');
       } else {
         const jwt = res.data.token;
@@ -38,9 +42,13 @@ function Login(props) {
       <div className="login-form max-w-sm w-11/12">
         {errorMessage && <Message text={errorMessage} success={false} />}
         <div className="inline-block p-10 w-full shadow-lg rounded bg-white ">
-          <h1 className="text-center text-blue-500 text-5xl mb-5">
-            <i className="fas fa-lock"></i>
-          </h1>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <h1 className="text-center text-blue-500 text-5xl mb-5">
+              <i className="fas fa-lock"></i>
+            </h1>
+          )}
           <input
             type="text"
             placeholder="Username"
@@ -57,7 +65,12 @@ function Login(props) {
           />
           <button
             onClick={onClickLogin}
-            className="bg-blue-500 hover:bg-blue-600 transition duration-200 font-bold p-3 rounded w-full text-white"
+            className={`${
+              isLoading
+                ? 'bg-blue-200 cursor-default '
+                : 'bg-blue-500 hover:bg-blue-600'
+            }  transition duration-200 font-bold p-3 rounded w-full text-white`}
+            disabled={isLoading}
           >
             Login
           </button>

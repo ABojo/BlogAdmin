@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './Login';
 import Dashboard from './Dashboard';
@@ -12,7 +11,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/dashboard" children={<Dashboard />} />
+        <Route exact path="/" children={<Dashboard />} />
       </Switch>
     </Router>
   );
