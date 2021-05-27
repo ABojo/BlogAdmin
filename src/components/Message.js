@@ -4,7 +4,7 @@ function Message(props) {
   const textColor = success ? 'text-green-900' : 'text-red-900';
 
   return (
-    <div className={`p-5 w-full ${backgroundColor} rounded mb-10`}>
+    <div className={`p-5 w-full ${backgroundColor} rounded mb-10 wobble`}>
       <h1 className={`${textColor} text-sm text-center`}>{text}</h1>
     </div>
   );

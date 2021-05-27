@@ -10,6 +10,7 @@ function Login(props) {
   const [isLoading, setIsLoading] = useState(false);
 
   const onClickLogin = async () => {
+    setErrorMessage('');
     if (username && password) {
       setIsLoading(true);
       const res = await API.login(username, password);

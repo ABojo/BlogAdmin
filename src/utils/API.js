@@ -1,5 +1,5 @@
 const login = async (username, password) => {
-  const raw = await fetch('https://odingblogapi.herokuapp.com/api/login', {
+  const raw = await fetch('https://odingblogapi.herokuapp.com/api/me/login', {
     method: 'POST',
     body: JSON.stringify({ username, password }),
     headers: {
