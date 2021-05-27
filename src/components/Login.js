@@ -57,7 +57,7 @@ function Login(props) {
             className="p-3 bg-gray-100 block rounded w-full mb-5 text-gray-900 placeholder-gray-600"
           />
           <input
-            type="text"
+            type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.currentTarget.value)}
