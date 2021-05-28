@@ -12,7 +12,7 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className="px-5 max-w-5xl w-11/12 mx-auto ">
+    <div className="px-5 max-w-3xl w-11/12 mx-auto ">
       <h1 className="text-2xl font-bold mb-10 block">
         Your Posts ({posts && posts.length})
       </h1>
@@ -20,7 +20,7 @@ function Dashboard() {
         posts
           .map((post, i) => {
             return (
-              <div className="mb-12 p-8 bg-blue-50 rounded relative">
+              <div className="mb-10 p-8 bg-blue-50 rounded relative">
                 <h1 className="text-2xl font-bold mb-3">{post.title}</h1>
                 <p className="text-gray-400">
                   {`${
@@ -42,7 +42,10 @@ function Dashboard() {
                     Edit
                   </a>
 
-                  <a href="/" className="text-gray-500 ml-3">
+                  <a
+                    href="/"
+                    className="text-gray-500 ml-3 hover:underline transition duration-200"
+                  >
                     Delete
                   </a>
                 </div>
