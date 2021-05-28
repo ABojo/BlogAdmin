@@ -13,14 +13,14 @@ function Dashboard() {
 
   return (
     <div className="px-5 max-w-3xl w-11/12 mx-auto ">
-      <h1 className="text-2xl font-bold mb-10 block">
-        Your Posts ({posts && posts.length})
-      </h1>
       {posts &&
         posts
-          .map((post, i) => {
+          .map((post) => {
             return (
-              <div className="mb-10 p-8 bg-blue-50 rounded relative">
+              <div
+                className="mb-10 p-8 bg-blue-50 rounded relative"
+                key={post._id}
+              >
                 <h1 className="text-2xl font-bold mb-3">{post.title}</h1>
                 <p className="text-gray-400">
                   {`${
