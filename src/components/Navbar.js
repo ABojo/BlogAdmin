@@ -1,4 +1,8 @@
+import { NavLink } from 'react-router-dom';
 function Navbar(props) {
+  const activeClassName =
+    'font-bold text-blue-500 pb-1 border-blue-500 border-b-2 transition duration-200';
+
   return (
     <div>
       <div className="bg-blue-500 px-5 py-3 flex justify-between items-baseline mb-10">
@@ -16,13 +20,17 @@ function Navbar(props) {
       </div>
 
       <div className="text-lg text-gray-500 mb-10 block text-center">
-        <a
-          href="/posts"
-          className="mr-12 font-bold text-blue-500 pb-1 border-blue-500 border-b-2 transition duration-200"
+        <NavLink
+          exact
+          to="/"
+          className="mr-12"
+          activeClassName={activeClassName}
         >
           My Posts
-        </a>
-        <a href="/create">Create Post</a>
+        </NavLink>
+        <NavLink exact to="/create" activeClassName={activeClassName}>
+          Create Post
+        </NavLink>
       </div>
     </div>
   );
