@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './Login';
-import Dashboard from './Dashboard';
+import PostList from './PostList';
 import Navbar from './Navbar';
 import useToken from '../hooks/useToken';
 import React from 'react';
@@ -16,9 +16,8 @@ function App() {
         <Navbar setToken={setToken} />
         <Switch>
           <Route exact path="/">
-            <Dashboard />
+            <PostList />
           </Route>
-
           <Route exact path="/create">
             <h1>Create Page</h1>
           </Route>
