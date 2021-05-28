@@ -12,11 +12,15 @@ function App() {
 
   return (
     <React.Fragment>
-      <Navbar setToken={setToken} />
       <Router>
+        <Navbar setToken={setToken} />
         <Switch>
           <Route exact path="/">
             <Dashboard />
+          </Route>
+
+          <Route exact path="/create">
+            <h1>Create Page</h1>
           </Route>
         </Switch>
       </Router>
