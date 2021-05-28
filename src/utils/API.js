@@ -12,12 +12,12 @@ const login = async (username, password) => {
   return json;
 };
 
-const getMyPosts = async (authToken) => {
+const getMyPosts = async () => {
   const raw = await fetch('https://odingblogapi.herokuapp.com/api/me/posts', {
     method: 'GET',
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
-      Authorization: `Bearer ${authToken}`,
+      Authorization: `Bearer ${localStorage.getItem('authToken')}`,
     },
   });
 
