@@ -1,6 +1,6 @@
 function Navbar(props) {
   return (
-    <div className="bg-blue-500 px-5 py-3 flex justify-between items-baseline">
+    <div className="bg-blue-500 px-5 py-3 flex justify-between items-baseline mb-5">
       <a className="text-xl font-bold text-white" href="/">
         Blog Admin
       </a>
