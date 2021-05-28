@@ -19,6 +19,11 @@
   animation: headShake 1s;
 }
 
+.bubble {
+  top: -2rem;
+  right: -1rem;
+}
+
 .lds-ring {
   display: inline-block;
   width: 80px;

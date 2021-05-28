@@ -1,6 +1,5 @@
 import API from '../utils/API';
 import { useState, useEffect } from 'react';
-import formatDate from '../utils/formatDate';
 
 function Dashboard() {
   const [posts, setPosts] = useState('');
@@ -13,37 +12,40 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className="px-5 max-w-lg w-11/12 mx-auto">
-      <h1 className="text-3xl mb-5 block">
+    <div className="px-5 max-w-5xl w-11/12 mx-auto ">
+      <h1 className="text-2xl font-bold mb-10 block">
         Your Posts ({posts && posts.length})
       </h1>
       {posts &&
         posts
           .map((post, i) => {
             return (
-              <div className="mb-5 bg-gray-50 p-5 rounded">
-                <h1 className="text-xl inline font-bold">{post.title}</h1>
-                <h1>
-                  <i className="fas fa-comment text-blue-100"></i>{' '}
-                  {post.comments.length}
-                </h1>
-                <h1>
-                  <i
-                    class="fa fa-calendar text-blue-100"
-                    aria-hidden="true"
-                  ></i>
-                  {formatDate(post.timestamp)}
-                </h1>
-                <a
-                  href="/"
-                  className="text-yellow-900 bg-yellow-100 px-4 py-2 rounded font-bold inline-block"
-                >
-                  Edit
-                </a>
+              <div className="mb-12 p-8 bg-blue-50 rounded relative">
+                <h1 className="text-2xl font-bold mb-3">{post.title}</h1>
+                <p className="text-gray-400">
+                  {`${
+                    post.body.length > 200 ? post.body.slice(0, 200) : post.body
+                  }...`}
+                </p>
+                <div className="bg-white inline-block p-3 rounded-full shadow-md text-md absolute bubble">
+                  <h1 className="text-blue-500">
+                    <i className="fas fa-comment mr-1"></i>
+                    {post.comments.length}
+                  </h1>
+                </div>
 
-                <a href="/" className="text-gray-500 ml-3">
-                  Delete
-                </a>
+                <div className="mt-3">
+                  <a
+                    href="/"
+                    className="text-yellow-900 bg-yellow-100 hover:bg-yellow-200 transition duration-200 px-4 py-2 rounded font-bold inline-block"
+                  >
+                    Edit
+                  </a>
+
+                  <a href="/" className="text-gray-500 ml-3">
+                    Delete
+                  </a>
+                </div>
               </div>
             );
           })
