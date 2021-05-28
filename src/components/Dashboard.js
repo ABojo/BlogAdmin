@@ -1,5 +1,6 @@
 import API from '../utils/API';
 import { useState, useEffect } from 'react';
+import formatDate from '../utils/formatDate';
 
 function Dashboard() {
   const [posts, setPosts] = useState('');
@@ -31,7 +32,7 @@ function Dashboard() {
                     class="fa fa-calendar text-blue-100"
                     aria-hidden="true"
                   ></i>
-                  {post.timestamp}
+                  {formatDate(post.timestamp)}
                 </h1>
                 <a
                   href="/"
