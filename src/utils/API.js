@@ -26,6 +26,21 @@ const getMyPosts = async () => {
   return json;
 };
 
-const API = { login, getMyPosts };
+const createPost = async (title, body) => {
+  const raw = await fetch('https://odingblogapi.herokuapp.com/api/posts', {
+    method: 'POST',
+    body: JSON.stringify({ title, body, published: true }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+      Authorization: `Bearer ${localStorage.getItem('authToken')}`,
+    },
+  });
+
+  const json = await raw.json();
+
+  return json;
+};
+
+const API = { login, getMyPosts, createPost };
 
 export default API;
