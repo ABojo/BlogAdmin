@@ -1,18 +1,23 @@
 import API from '../utils/API';
 import { useState, useEffect } from 'react';
+import Loader from './Loader';
 
 function Dashboard() {
   const [posts, setPosts] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     (async () => {
+      setIsLoading(true);
       const json = await API.getMyPosts();
+      setIsLoading(false);
       setPosts(json.data.posts);
     })();
   }, []);
 
   return (
     <div className="px-5 max-w-3xl w-11/12 mx-auto ">
+      {isLoading && <Loader />}
       {posts &&
         posts
           .map((post) => {
