@@ -18,7 +18,7 @@ function PostList() {
   return (
     <div className="px-5 max-w-3xl w-11/12 mx-auto ">
       {isLoading && <Loader />}
-      {!posts.length && (
+      {posts && !posts.length && (
         <h1 className="text-center text-3xl font-bold">You have no posts!</h1>
       )}
       {posts &&
