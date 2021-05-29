@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './Login';
 import PostList from './PostList';
 import Navbar from './Navbar';
+import CreateForm from './CreateForm';
 import useToken from '../hooks/useToken';
 import React from 'react';
 
@@ -19,7 +20,7 @@ function App() {
             <PostList />
           </Route>
           <Route exact path="/create">
-            <h1>Create Page</h1>
+            <CreateForm />
           </Route>
         </Switch>
       </Router>
