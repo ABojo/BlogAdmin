@@ -1,7 +1,24 @@
 import { useState } from 'react';
+import API from '../utils/API';
 
 function CreateForm(props) {
   const { postTitle, setPostTitle, postBody, setPostBody } = props;
+
+  const onClickPost = async () => {
+    if (postTitle && postBody) {
+      //start loading
+      const json = await API.createPost(postTitle, postBody);
+      //stop loading
+
+      if (json.status === 'failure') {
+        //Add error message popup
+      } else {
+        //add success message popup
+      }
+    } else {
+      //Error message popup asking user to fill in both fields
+    }
+  };
 
   return (
     <div className="px-5 max-w-3xl w-11/12 mx-auto ">
@@ -21,7 +38,10 @@ function CreateForm(props) {
           setPostBody(e.currentTarget.value);
         }}
       />
-      <button className="w-full p-4 bg-green-100 text-green-900 font-bold rounded hover:bg-green-200 text-xl transition duration-200">
+      <button
+        className="w-full p-4 bg-green-100 text-green-900 font-bold rounded hover:bg-green-200 text-xl transition duration-200"
+        onClick={onClickPost}
+      >
         Create Post
       </button>
     </div>
