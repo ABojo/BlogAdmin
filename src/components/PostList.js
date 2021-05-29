@@ -47,12 +47,9 @@ function Dashboard() {
                     Edit
                   </a>
 
-                  <a
-                    href="/"
-                    className="text-gray-500 ml-3 hover:underline transition duration-200"
-                  >
+                  <button className="text-gray-500 ml-3 hover:underline transition duration-200">
                     Delete
-                  </a>
+                  </button>
                 </div>
               </div>
             );
