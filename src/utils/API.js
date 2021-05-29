@@ -41,6 +41,23 @@ const createPost = async (title, body) => {
   return json;
 };
 
-const API = { login, getMyPosts, createPost };
+const deletePost = async (postId) => {
+  const raw = await fetch(
+    `https://odingblogapi.herokuapp.com/api/posts/${postId}`,
+    {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+        Authorization: `Bearer ${localStorage.getItem('authToken')}`,
+      },
+    }
+  );
+
+  const json = await raw.json();
+
+  return json;
+};
+
+const API = { login, getMyPosts, createPost, deletePost };
 
 export default API;
