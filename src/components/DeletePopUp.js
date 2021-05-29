@@ -28,7 +28,8 @@ function DeletePopUp(props) {
   };
 
   const disabledBtn = 'bg-gray-100 text-gray-400 cursor-default';
-  const activeBtn = 'bg-red-100 text-red-900 hover:bg-red-200';
+  const activeBtn =
+    'bg-red-100 text-red-900 hover:bg-red-200 transition duration-200';
 
   return (
     <div className="fixed h-screen w-screen bg-opacity-40 bg-black top-0 left-0 z-10">
