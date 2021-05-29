@@ -2,7 +2,7 @@ import API from '../utils/API';
 import { useState, useEffect } from 'react';
 import Loader from './Loader';
 
-function Dashboard() {
+function PostList() {
   const [posts, setPosts] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -59,4 +59,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default PostList;
