@@ -41,6 +41,8 @@ function PostList(props) {
           id={deletePopUp.id}
           title={deletePopUp.title}
           hidePopUp={hideDeletePopUp}
+          posts={posts}
+          setPosts={setPosts}
         />
       )}
       {isLoading && <Loader />}
