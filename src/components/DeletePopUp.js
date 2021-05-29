@@ -4,7 +4,7 @@ import Message from './Message';
 import { useState } from 'react';
 
 function DeletePopUp(props) {
-  const { id, title, hidePopUp } = props;
+  const { id, title, hidePopUp, posts, setPosts } = props;
   const [isLoading, setIsLoading] = useState(false);
   const [popUp, setPopUp] = useState({ message: null, success: null });
 
@@ -19,6 +19,7 @@ function DeletePopUp(props) {
         success: false,
       });
     } else {
+      setPosts(posts.filter((post) => post._id !== id));
       setPopUp({
         message: 'Your post has been deleted!',
         success: true,
