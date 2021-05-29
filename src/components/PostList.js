@@ -2,7 +2,7 @@ import API from '../utils/API';
 import { useState, useEffect } from 'react';
 import Loader from './Loader';
 
-function PostList() {
+function PostList(props) {
   const [posts, setPosts] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -11,9 +11,14 @@ function PostList() {
       setIsLoading(true);
       const json = await API.getMyPosts();
       setIsLoading(false);
-      setPosts(json.data.posts);
+
+      if (json.data.message === 'Sorry, please login again!') {
+        props.setToken('');
+      } else {
+        setPosts(json.data.posts);
+      }
     })();
-  }, []);
+  }, [props]);
 
   return (
     <div className="px-5 max-w-3xl w-11/12 mx-auto ">

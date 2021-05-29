@@ -19,7 +19,7 @@ function App() {
         <Navbar setToken={setToken} />
         <Switch>
           <Route exact path="/">
-            <PostList />
+            <PostList setToken={setToken} />
           </Route>
           <Route exact path="/create">
             <CreateForm
