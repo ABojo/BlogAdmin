@@ -78,7 +78,7 @@ function PostList(props) {
 
                   <button
                     onClick={() => showDeletePopUp(post._id, post.title)}
-                    className="text-gray-500 ml-3 hover:underline transition duration-200"
+                    className="hover:cursor-pointer ml-3 px-4 py-2 border text-gray-500 border-gray-200 rounded"
                   >
                     Delete
                   </button>
