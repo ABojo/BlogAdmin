@@ -1,10 +1,24 @@
 import API from '../utils/API';
 import { useState, useEffect } from 'react';
 import Loader from './Loader';
+import DeletePopUp from './DeletePopUp';
 
 function PostList(props) {
   const [posts, setPosts] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [deletePopUp, setDeletePopUp] = useState({
+    show: false,
+    id: null,
+    title: null,
+  });
+
+  const showDeletePopUp = (id, title) => {
+    setDeletePopUp({ show: true, id, title });
+  };
+
+  const hideDeletePopUp = () => {
+    setDeletePopUp({ show: false, id: null, title: null });
+  };
 
   useEffect(() => {
     (async () => {
@@ -22,6 +36,13 @@ function PostList(props) {
 
   return (
     <div className="px-5 max-w-3xl w-11/12 mx-auto ">
+      {deletePopUp.show && (
+        <DeletePopUp
+          id={deletePopUp.id}
+          title={deletePopUp.title}
+          hidePopUp={hideDeletePopUp}
+        />
+      )}
       {isLoading && <Loader />}
       {posts && !posts.length && (
         <h1 className="text-center text-3xl font-bold">You have no posts!</h1>
@@ -55,7 +76,10 @@ function PostList(props) {
                     Edit
                   </a>
 
-                  <button className="text-gray-500 ml-3 hover:underline transition duration-200">
+                  <button
+                    onClick={() => showDeletePopUp(post._id, post.title)}
+                    className="text-gray-500 ml-3 hover:underline transition duration-200"
+                  >
                     Delete
                   </button>
                 </div>
