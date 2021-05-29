@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { act } from 'react-dom/test-utils';
 import API from '../utils/API';
 import Message from './Message';
 import Loader from './Loader';
