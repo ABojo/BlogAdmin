@@ -52,7 +52,13 @@ function PostList(props) {
       )}
       {posts &&
         posts
-          .map((post) => <Post post={post} showDeletePopUp={showDeletePopUp} />)
+          .map((post) => (
+            <Post
+              post={post}
+              showDeletePopUp={showDeletePopUp}
+              key={post._id}
+            />
+          ))
           .reverse()}
     </div>
   );
