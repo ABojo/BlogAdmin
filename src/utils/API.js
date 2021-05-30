@@ -63,7 +63,11 @@ const editPost = async (postId, data) => {
     `https://odingblogapi.herokuapp.com/api/posts/${postId}`,
     {
       method: 'PUT',
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        title: data.title,
+        body: data.body,
+        published: true,
+      }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
         Authorization: `Bearer ${localStorage.getItem('authToken')}`,
