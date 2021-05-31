@@ -30,6 +30,23 @@ function Login(props) {
   return (
     <div className="w-full h-screen bg-blue-400">
       <div className="login-form max-w-sm w-11/12">
+        <div className={`p-5 w-full bg-yellow-100 rounded mb-10 wobble`}>
+          <h1 className={`text-yellow-900 text-sm mb-3`}>
+            You can test this app with the guest account
+          </h1>
+
+          <p className="text-yellow-900 text-sm">
+            Username:
+            <span className=" text-yellow-900 font-bold text-lg"> Guest</span>
+          </p>
+          <p className="text-yellow-900 text-sm">
+            Password:
+            <span className=" text-yellow-900 font-bold text-lg">
+              {' '}
+              password
+            </span>
+          </p>
+        </div>
         {errorMessage && <Message text={errorMessage} success={false} />}
         <div className="inline-block p-10 w-full shadow-lg rounded bg-white ">
           {isLoading ? (
