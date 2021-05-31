@@ -48,7 +48,7 @@ function Post(props) {
       setPostBody(bodyInput);
 
       setPopUp({
-        message: 'You have succesfully edit your post!',
+        message: 'You have succesfully edited your post!',
         success: true,
       });
     }
