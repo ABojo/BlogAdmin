@@ -64,10 +64,10 @@ function Post(props) {
         target="_blank"
         rel="noreferrer"
         href={`https://abojo.github.io/BlogClient/posts/${post._id}`}
-        className="text-2xl font-bold mb-3"
+        className="text-2xl font-bold mb-3 hover:opacity-60 transition duration-200"
       >
         {postTitle}
-        <i className="text-lg text-blue-500 ml-3 fas fa-external-link-alt hover:text-blue-300 transition duration-200"></i>
+        <i className="text-lg text-blue-500 ml-3 fas fa-external-link-alt"></i>
       </a>
       <p className="text-gray-400">
         {`${postBody.length > 200 ? postBody.slice(0, 200) : postBody}...`}
