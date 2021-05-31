@@ -49,7 +49,7 @@ function DeletePopUp(props) {
         <div className="ml-auto block w-max	">
           <button
             onClick={hidePopUp}
-            className="hover:cursor-pointer mr-3 p-3 border text-gray-500 border-gray-200 rounded"
+            className="hover:cursor-pointer mr-3 p-3 border text-gray-500 border-gray-200 rounded hover:bg-gray-100 transition duration-200"
           >
             Close
           </button>

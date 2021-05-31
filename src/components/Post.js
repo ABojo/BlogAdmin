@@ -89,7 +89,7 @@ function Post(props) {
 
         <button
           onClick={() => showDeletePopUp(post._id, post.title)}
-          className="hover:cursor-pointer ml-3 px-4 py-2 border text-gray-500 border-gray-200 rounded"
+          className="hover:cursor-pointer ml-3 px-4 py-2 border text-gray-500 border-gray-200 rounded hover:bg-blue-100 transition duration-200"
         >
           Delete
         </button>
