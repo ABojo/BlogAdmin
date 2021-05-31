@@ -82,7 +82,7 @@ function Post(props) {
       <div className="mt-3">
         <button
           onClick={toggleEditMode}
-          className="text-yellow-900 bg-yellow-100 hover:bg-yellow-200 transition duration-200 px-4 py-2 rounded font-bold inline-block"
+          className="text-yellow-900 bg-yellow-100 hover:bg-yellow-200 transition duration-200 px-4 py-2 rounded font-bold inline-block shadow"
         >
           Edit
         </button>
@@ -148,7 +148,7 @@ function Post(props) {
           onClick={onClickSave}
           className={`${
             isLoading ? disabledBtn : activeBtn
-          } px-4 py-2 rounded font-bold inline-block`}
+          } px-4 py-2 rounded font-bold inline-block shadow`}
         >
           Save
         </button>
@@ -157,7 +157,7 @@ function Post(props) {
   );
 
   return (
-    <div className="mb-10 p-8 bg-blue-50 rounded relative">
+    <div className="mb-10 p-8 bg-blue-50 rounded relative shadow-md">
       {editMode ? editModeMarkup : normalMarkup}
     </div>
   );

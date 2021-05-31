@@ -57,7 +57,7 @@ function DeletePopUp(props) {
             onClick={onClickDelete}
             className={`${
               popUp.success ? disabledBtn : activeBtn
-            } p-3 font-bold rounded`}
+            } p-3 font-bold rounded shadow`}
             disabled={popUp.success}
           >
             Delete
