@@ -60,7 +60,15 @@ function Post(props) {
 
   const normalMarkup = (
     <React.Fragment>
-      <h1 className="text-2xl font-bold mb-3">{postTitle}</h1>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href={`https://abojo.github.io/BlogClient/posts/${post._id}`}
+        className="text-2xl font-bold mb-3"
+      >
+        {postTitle}
+        <i className="text-lg text-blue-500 ml-3 fas fa-external-link-alt hover:text-blue-300 transition duration-200"></i>
+      </a>
       <p className="text-gray-400">
         {`${postBody.length > 200 ? postBody.slice(0, 200) : postBody}...`}
       </p>
