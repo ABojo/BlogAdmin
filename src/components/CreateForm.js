@@ -45,7 +45,7 @@ function CreateForm(props) {
       {popUpText && <Message text={popUpText} success={popUpStatus} />}
       <input
         placeholder="Title"
-        className="p-4 bg-gray-100 block rounded w-full mb-5 text-gray-900 placeholder-gray-600"
+        className="p-4 bg-gray-100 block rounded w-full mb-5 text-gray-900 placeholder-gray-600 shadow"
         value={postTitle}
         onChange={(e) => {
           setPostTitle(e.currentTarget.value);
@@ -53,7 +53,7 @@ function CreateForm(props) {
       />
       <textarea
         placeholder="Body"
-        className="p-4 bg-gray-100 block rounded w-full mb-5 text-gray-900 placeholder-gray-600 resize-none h-64"
+        className="p-4 bg-gray-100 block rounded w-full mb-5 text-gray-900 placeholder-gray-600 resize-none h-64 shadow"
         value={postBody}
         onChange={(e) => {
           setPostBody(e.currentTarget.value);
@@ -62,7 +62,7 @@ function CreateForm(props) {
       <button
         className={`${
           isLoading ? disabledBtnCss : activeBtnCss
-        } w-full p-4 font-bold rounded text-xl transition duration-200`}
+        } w-full p-4 font-bold rounded text-xl transition duration-200 shadow`}
         onClick={onClickPost}
         disabled={isLoading}
       >
