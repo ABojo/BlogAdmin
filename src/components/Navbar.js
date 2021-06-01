@@ -1,7 +1,8 @@
 import { NavLink, Link } from 'react-router-dom';
 function Navbar(props) {
   const activeClassName =
-    'font-bold text-blue-500 pb-1 border-blue-500 border-b-2 transition duration-200';
+    'font-bold text-blue-500 pb-1 border-blue-500 border-b-2';
+  const inactiveClassName = 'hover:text-blue-400 transition duration-200';
 
   return (
     <div>
@@ -23,12 +24,17 @@ function Navbar(props) {
         <NavLink
           exact
           to="/"
-          className="mr-12"
+          className={`${inactiveClassName} mr-12`}
           activeClassName={activeClassName}
         >
           My Posts
         </NavLink>
-        <NavLink exact to="/create" activeClassName={activeClassName}>
+        <NavLink
+          exact
+          to="/create"
+          className={inactiveClassName}
+          activeClassName={activeClassName}
+        >
           Create Post
         </NavLink>
       </div>
