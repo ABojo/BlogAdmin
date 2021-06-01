@@ -125,7 +125,7 @@ function Post(props) {
             clearPopUp();
             toggleEditMode();
           }}
-          className="hover:cursor-pointer mr-3 px-4 py-2 border text-gray-500 border-gray-200 rounded"
+          className="hover:cursor-pointer mr-3 px-4 py-2 border text-gray-500 border-gray-200 rounded hover:bg-blue-100 transition duration-200"
         >
           Cancel
         </button>
