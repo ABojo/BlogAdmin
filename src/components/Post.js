@@ -149,7 +149,7 @@ function Post(props) {
         <h1 className="text-blue-500">
           <i className="fas fa-comment mr-1"></i>
           {post.comments.length}
-          <i class="ml-2 fas fa-external-link-alt text-blue-200 text-sm hover:text-blue-400 transition duration-200 cursor pointer"></i>
+          <i class="ml-2 fas fa-external-link-alt text-blue-200 text-sm hover:text-blue-400 transition duration-200 cursor-pointer"></i>
         </h1>
       </div>
 
