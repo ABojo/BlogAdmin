@@ -72,12 +72,6 @@ function Post(props) {
       <p className="text-gray-400">
         {`${postBody.length > 200 ? postBody.slice(0, 200) : postBody}...`}
       </p>
-      <div className="bg-white inline-block p-3 rounded-full shadow-md text-md absolute bubble">
-        <h1 className="text-blue-500">
-          <i className="fas fa-comment mr-1"></i>
-          {post.comments.length}
-        </h1>
-      </div>
 
       <div className="mt-3">
         <button
@@ -124,13 +118,6 @@ function Post(props) {
         value={bodyInput}
         className="text-gray-400 p-3 rounded w-full resize-none h-64"
       />
-      <div className="bg-white inline-block p-3 rounded-full shadow-md text-md absolute bubble">
-        <h1 className="text-blue-500">
-          <i className="fas fa-comment mr-1"></i>
-          {post.comments.length}
-        </h1>
-      </div>
-
       <div className="mt-3">
         <button
           disabled={isLoading}
@@ -158,6 +145,14 @@ function Post(props) {
 
   return (
     <div className="mb-10 p-8 bg-blue-50 rounded relative shadow-md">
+      <div className="bg-white inline-block p-3 rounded-full shadow-md text-md absolute bubble">
+        <h1 className="text-blue-500">
+          <i className="fas fa-comment mr-1"></i>
+          {post.comments.length}
+          <i class="ml-2 fas fa-external-link-alt text-blue-200 text-sm hover:text-blue-400 transition duration-200 cursor pointer"></i>
+        </h1>
+      </div>
+
       {editMode ? editModeMarkup : normalMarkup}
     </div>
   );
