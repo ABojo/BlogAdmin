@@ -18,7 +18,7 @@ function CommentManager(props) {
         </button>
         <h1 className="font-bold text-md mb-3">Comments ({comments.length})</h1>
 
-        <div className="overflow-y-scroll max-h-96">
+        <div className="overflow-y-auto max-h-96">
           {comments
             .map((comment) => (
               <Comment
