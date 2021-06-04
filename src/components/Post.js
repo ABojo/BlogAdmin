@@ -45,6 +45,8 @@ function Post(props) {
       {editMode ? (
         <PostEditForm
           post={post}
+          postTitle={postTitle}
+          postBody={postBody}
           setPostTitle={setPostTitle}
           setPostBody={setPostBody}
           toggleMode={toggleMode}

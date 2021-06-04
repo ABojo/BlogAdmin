@@ -5,10 +5,11 @@ import Message from './Message';
 import onEnter from '../utils/onEnter';
 
 function PostEditForm(props) {
-  const { post, setPostTitle, setPostBody, toggleMode } = props;
+  const { post, postTitle, postBody, setPostTitle, setPostBody, toggleMode } =
+    props;
 
-  const [titleInput, setTitleInput] = useState(post.title);
-  const [bodyInput, setBodyInput] = useState(post.body);
+  const [titleInput, setTitleInput] = useState(postTitle);
+  const [bodyInput, setBodyInput] = useState(postBody);
 
   const [isLoading, setIsLoading] = useState(false);
   const [popUp, setPopUp] = useState({ message: null, success: null });
