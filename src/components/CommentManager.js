@@ -19,7 +19,7 @@ function CommentManager(props) {
                   {formatDate(com.timestamp)}
                 </p>
                 <p className="text-sm text-gray-500 mb-1">{com.body}</p>
-                <button className="text-red-500 hover:underline transition duration-200 font-bold text-sm">
+                <button className="text-red-500 hover:text-red-800 transition duration-200 font-bold text-sm">
                   Delete
                 </button>
               </div>
