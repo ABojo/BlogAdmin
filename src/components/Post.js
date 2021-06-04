@@ -19,12 +19,17 @@ function Post(props) {
     setCommentManager(!commentManager);
   };
 
+  const removeComment = (id) => {
+    setPostComments(postComments.filter((com) => com._id !== id));
+  };
+
   return (
     <div className="mb-10 p-8 bg-blue-50 rounded relative shadow-md">
       {commentManager && (
         <CommentManager
           comments={postComments}
           hideManager={toggleCommentMananger}
+          removeComment={removeComment}
         />
       )}
       <div className="bg-white inline-block p-3 rounded-full shadow-md text-md absolute bubble">
