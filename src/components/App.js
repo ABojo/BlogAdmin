@@ -15,7 +15,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Navbar setToken={setToken} />
         <Switch>
           <Route exact path="/">
