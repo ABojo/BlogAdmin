@@ -2,7 +2,7 @@ import formatDate from '../utils/formatDate';
 import React, { useState } from 'react';
 import API from '../utils/API';
 function Comment(props) {
-  const { comment, removeComment } = props;
+  const { comment, removeComment, setPopUp } = props;
   const [deleteMode, setDeleteMode] = useState(false);
 
   const toggleMode = () => {
@@ -10,15 +10,23 @@ function Comment(props) {
   };
 
   const onClickDelete = async () => {
+    //clear pop up at start of a new delete so the new popup gets the wobble animation
+    setPopUp({ message: null, status: null });
+
     const json = await API.deleteComment(comment._id);
     console.log(json);
     if (json.status === 'failure') {
-      //show failing error message
-      //toggle delete mode
+      setPopUp({
+        message: 'Sorry, there was a problem deleting your comment!',
+        success: true,
+      });
+      toggleMode();
     } else {
-      //remove comment from comments array
-      console.log('removed!');
       removeComment(comment._id);
+      setPopUp({
+        message: 'You have succesfully removed the comment!',
+        success: true,
+      });
     }
   };
 
