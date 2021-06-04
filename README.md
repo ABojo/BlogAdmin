@@ -18,5 +18,3 @@ This project is paired with:
   <li><a href='https://github.com/ABojo/BlogClient'>BlogClient</a></li>
   <li><a href='https://github.com/ABojo/BlogAPI'>BlogAPI</a></li>
 </ul>
-
-Live preview: https://abojo.github.io/BlogAdmin/
