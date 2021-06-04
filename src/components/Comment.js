@@ -22,7 +22,7 @@ function Comment(props) {
 
     if (json.status === 'failure') {
       setPopUp({
-        message: 'Sorry, there was a problem deleting your comment!',
+        message: 'Sorry, there was a problem deleting the comment!',
         success: true,
       });
       toggleMode();
