@@ -1,9 +1,12 @@
 import formatDate from '../utils/formatDate';
 import React, { useState } from 'react';
 import API from '../utils/API';
+import Loader from './Loader';
+
 function Comment(props) {
   const { comment, removeComment, setPopUp } = props;
   const [deleteMode, setDeleteMode] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleMode = () => {
     setDeleteMode(!deleteMode);
@@ -13,8 +16,10 @@ function Comment(props) {
     //clear pop up at start of a new delete so the new popup gets the wobble animation
     setPopUp({ message: null, status: null });
 
+    setIsLoading(true);
     const json = await API.deleteComment(comment._id);
-    console.log(json);
+    setIsLoading(false);
+
     if (json.status === 'failure') {
       setPopUp({
         message: 'Sorry, there was a problem deleting your comment!',
@@ -69,6 +74,11 @@ function Comment(props) {
 
   return (
     <div className="mb-3 border-t border-gray-300 pt-3">
+      {isLoading && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <Loader />
+        </div>
+      )}
       {deleteMode ? deleteMarkup : normalMarkup}
     </div>
   );
