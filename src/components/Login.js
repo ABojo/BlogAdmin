@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Message from './Message';
 import Loader from './Loader';
 import API from '../utils/API';
+import onEnter from '../utils/onEnter';
 
 function Login(props) {
   const [username, setUsername] = useState('');
@@ -60,6 +61,7 @@ function Login(props) {
             type="text"
             placeholder="Username"
             value={username}
+            onKeyPress={(e) => onEnter(e, onClickLogin)}
             onChange={(e) => setUsername(e.currentTarget.value)}
             className="p-3 bg-gray-100 block rounded w-full mb-5 text-gray-900 placeholder-gray-600"
           />
@@ -67,6 +69,7 @@ function Login(props) {
             type="password"
             placeholder="Password"
             value={password}
+            onKeyPress={(e) => onEnter(e, onClickLogin)}
             onChange={(e) => setPassword(e.currentTarget.value)}
             className="p-3 bg-gray-100 block rounded w-full mb-5 text-gray-900 placeholder-gray-600"
           />

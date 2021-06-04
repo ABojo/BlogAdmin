@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import API from '../utils/API';
 import Loader from './Loader';
 import Message from './Message';
+import onEnter from '../utils/onEnter';
 
 function PostEditForm(props) {
   const { post, setPostTitle, setPostBody, toggleMode } = props;
@@ -58,6 +59,7 @@ function PostEditForm(props) {
       <input
         type="text"
         placeholder="Title"
+        onKeyPress={(e) => onEnter(e, onClickSave)}
         onChange={(e) => {
           setTitleInput(e.currentTarget.value);
         }}

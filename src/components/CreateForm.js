@@ -2,6 +2,7 @@ import { useState } from 'react';
 import API from '../utils/API';
 import Message from './Message';
 import Loader from './Loader';
+import onEnter from '../utils/onEnter';
 
 function CreateForm(props) {
   const { postTitle, setPostTitle, postBody, setPostBody } = props;
@@ -47,6 +48,7 @@ function CreateForm(props) {
         placeholder="Title"
         className="p-4 bg-gray-100 block rounded w-full mb-5 text-gray-900 placeholder-gray-600 shadow"
         value={postTitle}
+        onKeyPress={(e) => onEnter(e, onClickPost)}
         onChange={(e) => {
           setPostTitle(e.currentTarget.value);
         }}
