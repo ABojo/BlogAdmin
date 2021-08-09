@@ -9,7 +9,7 @@ function PostDetails(props) {
         target="_blank"
         rel="noreferrer"
         href={`https://abojo.github.io/BlogClient/posts/${post._id}`}
-        className="text-2xl font-bold mb-3 hover:opacity-60 transition duration-200"
+        className="text-2xl font-bold mb-3 hover:opacity-60 transition duration-200 break-words"
       >
         {postTitle}
         <i className="text-lg text-blue-500 ml-3 fas fa-external-link-alt"></i>
