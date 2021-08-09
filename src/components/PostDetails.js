@@ -14,7 +14,7 @@ function PostDetails(props) {
         {postTitle}
         <i className="text-lg text-blue-500 ml-3 fas fa-external-link-alt"></i>
       </a>
-      <p className="text-gray-400">
+      <p className="text-gray-400 break-words">
         {`${postBody.length > 200 ? postBody.slice(0, 200) : postBody}...`}
       </p>
 
